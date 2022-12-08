@@ -3,7 +3,7 @@ from sys import argv
 from pyowm.utils import timestamps
 
 city = argv[1]
-owm = OWM('6b314425a78fac7f97eb283598883964')
+owm = OWM('your-api-key')
 
 mgr = owm.geocoding_manager()
 
