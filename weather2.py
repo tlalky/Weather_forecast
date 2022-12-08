@@ -42,27 +42,7 @@ except KeyError:
 pressure_dict = mgr.weather_at_place(city).weather.barometric_pressure()
 print("Current pressure: " + str(pressure_dict['press']) + " hPa")
 
-
-
-
-
-
-
-
-""" 
-sunrise_iso = weather.sunrise_time(timeformat='iso')        COS JEST ZLE I POKAZUJE MI WSCHOD O 10 XD
-print(sunrise_iso)                                          A ZACHOD O 1 W NOCY XD
-sunrise_date = weather.sunrise_time(timeformat='date')
-print(sunrise_date)
-
-sunrise_unix = weather.sunrise_time()
-print(sunrise_unix)
-sunrset_date = weather.sunset_time(timeformat='date')
-print(sunrset_date)
-"""
-
 #TOMORROW
-
 one_call = mgr.one_call(latitude, longitude)
 print(f"\nTomorrows morning it will feel like: {one_call.forecast_daily[0].temperature('celsius').get('feels_like_morn', None):.1f} °C")
 
@@ -72,46 +52,3 @@ if three_h_forecaster.will_be_rainy_at(tomorrow):
     print("Tomorrow will be rainy")
 else:
     print("Tomorrow will not be rainy")
-
-
-
-"""
-list_of_weathers = three_h_forecaster.when_clear()
-
-status = []
-daty = []
-for i in range(len(list_of_weathers)):
-    status.append(str(list_of_weathers[i]).split(","))
-    if i % 3 == 1:
-        daty.append(list_of_weathers[i])
-
-print(len(list_of_weathers))
-print(len(status))
-
-s = "Name1=Value1;Name2=Value2;Name3=Value3"
-print(dict(item.split("=") for item in s.split(";")))
-
-print(dict(item.split(",") for item in str(list_of_weathers).split(",")))
-
-
-
-
-
-daty = []
-status = []
-for i in range(len(list_of_weathers)):
-    if i % 3 == 1:
-        daty.append(list_of_weathers[i])
-    elif i % 3 == 0:
-        status.append(list_of_weathers[i])
-
-print(daty)
-print("\n")
-print(status)
-"""
-
-
-
-
-
-
